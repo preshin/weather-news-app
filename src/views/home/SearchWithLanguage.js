@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Row, Col, Input, Select } from "antd";
 import { useDispatch } from "react-redux";
-import { clearNewsList, fetchNews } from "../../store/actions/newsListAction";
+import {
+  clearNewsList,
+  fetchNews,
+  languageOptions,
+  updateSearchTextAndLang,
+} from "../../store/actions/newsListAction";
 
 export default function SearchWithLanguage() {
   const { Option } = Select;
-
-  const languageOptions = {
-    English: "en",
-    French: "fr",
-    Hindi: "hi",
-    Malayalam: "ml",
-  };
 
   const [selectedLang, setSelectedLang] = useState("English");
   const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
 
   const getNews = async () => {
+    dispatch(updateSearchTextAndLang({ searchText, selectedLang }));
+    dispatch(clearNewsList());
+
     if (searchText.length > 0) {
-      dispatch(fetchNews({ searchText, lang: languageOptions[selectedLang] }));
-    } else {
-      dispatch(clearNewsList());
+      dispatch(fetchNews());
     }
   };
 
@@ -33,21 +32,23 @@ export default function SearchWithLanguage() {
     return () => clearTimeout(delayDebounce);
   }, [searchText, selectedLang]);
 
-  console.log("selectedLang", selectedLang);
   return (
     <Row gutter={16}>
       <Col xs={16}>
         <Input
+          size="large"
           placeholder="Search news"
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
+          className="border-radius-15"
         />
       </Col>
       <Col xs={8}>
         <Select
+          size="large"
           showSearch
           value={selectedLang}
-          className="width-full"
+          className="width-full border-radius-15"
           onChange={setSelectedLang}
         >
           {Object.keys(languageOptions).map((key) => (

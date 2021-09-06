@@ -1,9 +1,10 @@
 .app {
-  height: 100vh;
+  /* height: 100vh; */
+  background-color: #ffffff;
 }
 
 .app-content {
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .home-container {
@@ -12,4 +13,75 @@
 
 .width-full {
   width: 100%;
+}
+
+.p-0 {
+  padding: 0px !important;
+}
+
+.p-20 {
+  padding: 20px !important;
+}
+
+.pt-20 {
+  padding-top: 20px !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.fs-10 {
+  font-size: 10px !important;
+}
+
+.h-215 {
+  height: 215px;
+}
+
+.h-175 {
+  height: 175px;
+}
+
+.h-60 {
+  height: 60px;
+}
+
+.border-radius-15 {
+  border-radius: 15px;
+}
+
+.border-radius-25 {
+  border-radius: 25px;
+}
+
+.border-solid-1-lightgrey {
+  border: 1px solid lightgrey !important;
+}
+
+.overflow-scroll {
+  overflow: scroll !important;
+}
+
+.div-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.news-list-container {
+  height: calc(100vh - 275px);
+  padding: 0px 20px !important;
 }
