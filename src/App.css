@@ -1,0 +1,15 @@
+.app {
+  height: 100vh;
+}
+
+.app-content {
+  padding: 20px;
+}
+
+.home-container {
+  padding: 20px !important;
+}
+
+.width-full {
+  width: 100%;
+}

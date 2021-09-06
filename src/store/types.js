@@ -1,0 +1,2 @@
+export const UPDATE_NEWS_LIST = "UPDATE_NEWS_LIST";
+export const CLEAR_NEWS_LIST = "CLEAR_NEWS_LIST";
